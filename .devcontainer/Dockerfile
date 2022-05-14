@@ -4,7 +4,7 @@
 ARG VARIANT="3.10-bullseye"
 FROM mcr.microsoft.com/vscode/devcontainers/python:0-${VARIANT}
 
-RUN su vscode -c "curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -"
+RUN su vscode -c "pip install cleo; curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -"
 
 # [Choice] Node.js version: none, lts/*, 16, 14, 12, 10
 # ARG NODE_VERSION="none"
